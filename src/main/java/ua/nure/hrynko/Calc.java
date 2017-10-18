@@ -4,8 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Calc {
-    public static Logger log;
-   // static Logger log = Logger.getLogger(Calc.class.getName());
+    static Logger log = Logger.getLogger(Calc.class.getName());
 
     public static double Sub(double arg1, double arg2) {
         log.log(Level.CONFIG, "Sub");
@@ -36,10 +35,7 @@ public class Calc {
     }
 
     public static void main(String[] args) {
-       // log = JULConfig.getLogger(Calc.class.getName());
-    //   log.setLevel(Level.FINEST);
-
-        log = new JULConfig(Calc.class).instance;
+        new JULConfig();
 
         log.log(Level.INFO, "Main");
 
